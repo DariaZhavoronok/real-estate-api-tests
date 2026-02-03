@@ -34,6 +34,18 @@
         <!-- Logging -->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-slf4j-impl</artifactId>
             <version>${log4j.version}</version>
             <scope>compile</scope>
@@ -52,7 +64,6 @@
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
             <version>${restassured.version}</version>
-            <scope>test</scope>
         </dependency>
 
         <!-- JSON (DTO serialization / deserialization) -->

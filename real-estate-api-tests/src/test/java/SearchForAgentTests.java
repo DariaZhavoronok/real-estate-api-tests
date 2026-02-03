@@ -10,6 +10,7 @@ import static org.hamcrest.Matchers.*;
 
 @Slf4j
 public class SearchForAgentTests {
+
     @Test
     public void userShouldBeAbleToSearchAnAgentByAddressTest() {
         log.info("Running scenario : User should be able to search the agent based on the address");
