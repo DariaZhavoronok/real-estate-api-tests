@@ -8,15 +8,6 @@ Used for validating backend APIs via automated tests.
 - Java 21
 - Maven 3.9+
 
-## Install SDKMAN and Java 21
-```bash
-curl -s "https://get.sdkman.io" | bash \
-  && source "$HOME/.sdkman/bin/sdkman-init.sh" \
-  && sdk install java 21.0.2-tem \
-  && sdk use java 21.0.2-tem \
-  && java -version
-```
-
 ## To run tests
 ```bash
 
