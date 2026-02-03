@@ -1,4 +1,4 @@
-##Automation test framework for Funda API
+## Automation test framework for Funda API
 
 ### Description
 API test automation framework written in Java 21.  
