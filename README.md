@@ -14,6 +14,13 @@ Used for validating backend APIs via automated tests.
 mvn clean test
 ```
 
+## Configuration
+
+The project uses a configuration file for environment-specific values such as protocol, headers, etc.
+```properties
+base.protocol=https://
+header.agent=
+
 ## Test Coverage and Approach
 The tests in this project are focused on the most critical user flows that can be validated without
 entity creation or authentication.
