@@ -1,4 +1,4 @@
-## Automation test framework for Funda API
+## Automation Test Framework for a Real Estate Platform
 
 ### Description
 API test automation framework written in Java 21.  
@@ -45,3 +45,9 @@ These issues were covered with additional smoke tests to ensure early detection 
 - Additional comments were added directly in the code to explain:
     - why a specific approach was chosen
     - how edge cases and unexpected responses are handled
+
+## AI Usage
+AI was used to speed up repetitive and non-critical tasks such as:
+- generating DTO classes
+- drafting initial documentation
+
