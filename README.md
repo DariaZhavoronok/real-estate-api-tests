@@ -48,3 +48,14 @@ AI was used to speed up repetitive and non-critical tasks such as:
 - generating DTO classes
 - drafting initial documentation
 
+### Note : Agent Header Configuration
+Some API endpoints require the `Agent` header to be present in the request.
+The header value can be provided in one of the following ways.
+
+#### Via config.properties
+Add the property below to `config.properties`:
+header.agent=YOUR_AGENT_VALUE
+
+#### Via Maven command line
+You can also pass the value using a JVM system property:
+mvn clean test -Dheader.agent=YOUR_AGENT_VALUE
