@@ -1,5 +1,4 @@
-import dto.request.SearchRequestDto;
-import dto.response.SearchResponseDto;
+import dto.response.search.SearchDto;
 import lombok.Builder;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.HttpStatus;
@@ -50,14 +49,14 @@ public class PropertySearchTests {
     public void userShouldBeAbleToSearchPropertyTest(final SearchTestData testData) {
         log.info("Running scenario : {}", testData.description);
         // Here should be POST call to create search result that we control
-        final SearchRequestDto searchRequest = getSearchRequestForOfferingType(testData);
+        final dto.request.search.SearchDto searchRequest = getSearchRequestForOfferingType(testData);
 
         log.info("Sending POST request for Search endpoint");
         var response = EntitiesRequestManagement.sendPostRequestForSearch(searchRequest);
 
         log.info("Validating status code and fields values");
         assertThat(response.extract().statusCode(), is(HttpStatus.SC_OK));
-        final SearchResponseDto actualSearchResponse = response.extract().as(SearchResponseDto.class);
+        final SearchDto actualSearchResponse = response.extract().as(SearchDto.class);
         verifySearchResponse(actualSearchResponse);
     }
 
@@ -75,7 +74,7 @@ public class PropertySearchTests {
 
     // For now, I keep assertions and builders within this class for better visibility.
     // If the class becomes too large or these methods are shared, it will be time to move them out.
-    private static void verifySearchResponse(final SearchResponseDto response) {
+    private static void verifySearchResponse(final SearchDto response) {
         // Ideally, I would compare SearchResponseDto objects instead of asserting fields. But for that I need to
         // control entities
         assertThat("friendlyUrl should be present",
@@ -86,13 +85,13 @@ public class PropertySearchTests {
     }
 
     // Builds the search request
-    private static SearchRequestDto getSearchRequestForOfferingType(final SearchTestData testData) {
-        return SearchRequestDto.builder()
+    private static dto.request.search.SearchDto getSearchRequestForOfferingType(final SearchTestData testData) {
+        return dto.request.search.SearchDto.builder()
                 .aggregationType(RequestFieldUtils.nullableList(testData.aggregationType))
                 .offeringType(RequestFieldUtils.nullableList(testData.offeringType))
                 .constructionType(RequestFieldUtils.nullableList(testData.constructionType))
                 .price(
-                        SearchRequestDto.PriceDto.builder()
+                        dto.request.search.SearchDto.PriceDto.builder()
                                 .priceRangeType("SalePrice")
                                 .lowerBound(100)
                                 .upperBound(1000000)

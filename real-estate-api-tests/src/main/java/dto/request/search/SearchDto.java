@@ -1,4 +1,4 @@
-package dto.request;
+package dto.request.search;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,7 +11,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class SearchRequestDto {
+public class SearchDto {
     private List<String> aggregationType;
     private List<String> constructionType;
     private List<String> offeringType;

@@ -22,6 +22,10 @@ public class RequestHandler {
         return RequestHandler.sendPostRequest(url, bodyAsJsonString);
     }
 
+    public static ValidatableResponse getEntity(final String url) {
+        return RequestHandler.sendGetRequest(url);
+    }
+
     public static ValidatableResponse sendPostRequest(final String url,
                                                       final Object body) {
         return given()
@@ -30,6 +34,15 @@ public class RequestHandler {
                 .header("User-Agent", AGENT_HEADER)
                 .body(body)
                 .post(url)
+                .then();
+    }
+
+    public static ValidatableResponse sendGetRequest(final String url) {
+        return given()
+                .header("Content-Type", "application/json")
+                .header("Accept", "application/json")
+                .header("User-Agent", AGENT_HEADER)
+                .get(url)
                 .then();
     }
 }

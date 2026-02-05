@@ -1,4 +1,4 @@
-package dto.request;
+package dto.request.agent;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Builder;
@@ -9,7 +9,7 @@ import java.util.List;
 @Data
 @Builder
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ContactAgentRequestDto {
+public class ContactAgentDto {
     private String firstName;
     private String lastName;
     private String emailAddress;
